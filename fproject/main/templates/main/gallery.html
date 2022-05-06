@@ -1,0 +1,51 @@
+{% extends 'main/base.html' %}
+{% block title %}
+Main page
+{% endblock %}
+{% load static %}
+{% block content %}
+
+<section class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+                        <h1 class="fw-bold">Gallery Management</h1>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Image</th>
+                                    <th>Image</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for p in files %}
+                                    <tr>
+                                        <td>{{ p.id }} </td>
+                                        <td>{{ p.name }} </td>
+                                        {% if p.image %}
+                                            <td>
+                                                <img src="{{ p.image.url }}" height="200" alt="" >
+                                            </td>
+                                        {% endif %}
+                                        <td>
+                                            <a href="{% url 'edit-file' p.id %}" class="btn btn-success badge">EDIT</a>
+                                            <a href="{% url 'delete-file' p.id %}" class="btn btn-danger badge">Delete</a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
+
+{% block scripts %}
+
+{% endblock scripts %}
+
+

@@ -1,0 +1,42 @@
+{% extends 'main/base.html' %}
+{% block title %}
+About page
+
+{% endblock %}
+
+{% block content %}
+    <h1>Who We Are</h1>
+    <p><br>
+At The Spruce, we offer practical, real-life tips and inspiration to help you make your best home. From decorating and gardening advice, to entertaining and home repair how-tos, The Spruce can show you how.
+
+We help more than 32 million users each month find the information they need to retile their bathroom, update their decor, grow their garden, or simply tackle a to-do list. Our 20-year-strong library of more than 14,000 pieces of content helps you spruce up your space, spruce up your yard, and spruce up your home.
+
+    <h1>Review Boards</h1>
+    <p><br>
+    We know that finding trustworthy advice online can be difficult—the internet is full of misinformation or personal opinion masquerading as fact. To make caring for your home and garden easier, we launched The Spruce Gardening and Plant Care Review Board, The Spruce Home Improvement Board, and The Spruce Cleaning Review Board, comprised of licensed and certified field experts. Our goal is to provide you with well-researched,
+    fact-checked information so you can keep your home and garden in its best possible shape.</p>
+<br>
+<p><br>
+    If you have question or you want to get additional information leave your email in the below form. We will send you as soon as possible</p>
+<br>
+<form action="" method=POST>
+        {% csrf_token %}
+          <div class="mb-3">
+            <label for="exampleInputName" class="form-label">Your name</label>
+            <input type="text" class="form-control" name="name">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail" class="form-label">Your Email</label>
+            <input type="text" class="form-control" name="username" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputMessage" class="form-label">Your Message</label>
+            <input type="textarea" class="form-control" name="message">
+          </div>
+        <input type="submit" value="Send" class="btn btn-secondary">
+    </form>
+{% endblock %}
+
+
+
+
